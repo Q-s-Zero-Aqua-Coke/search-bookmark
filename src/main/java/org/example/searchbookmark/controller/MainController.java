@@ -33,6 +33,8 @@ public class MainController {
         return "index";
     }
 
-//    @PostMapping("/bookmark")
-//    public String bookmark(@ModelAttribute )
+    @PostMapping("/bookmark")
+    public String bookmark(@ModelAttribute KeywordSearch keywordSearch, Model model) throws IOException, InterruptedException {
+        return "redirect:/bookmark";
+    }
 }

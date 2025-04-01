@@ -119,6 +119,10 @@
             <li>링크: <a href="<%= v.link() %>" target="_blank"><%= v.link() %></a></li>
             <li>설명: <%= v.description() %></li>
             <li>등록일: <%= v.postdate() %></li>
+            <form action="bookmark" method="post">
+                <input type="hidden" name="uuid" value="<%= v.uuid() %>">
+                <button>북마크</button>
+            </form>
         </ul>
     </div>
     <%

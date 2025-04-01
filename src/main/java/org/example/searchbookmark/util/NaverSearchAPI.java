@@ -13,6 +13,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.UUID;
 
 @Component
 public class NaverSearchAPI implements DotenvMixin, ObjectMapperMixin {
@@ -34,7 +35,7 @@ public class NaverSearchAPI implements DotenvMixin, ObjectMapperMixin {
         String responseBody = response.body();
         NaverSearchResult  naverSearchResult = objectMapper.readValue(responseBody, NaverSearchResult.class);
         return naverSearchResult.items().stream().map(item -> new KeywordSearch(
-                "",
+                UUID.randomUUID().toString(), // 세션 저장용
                 item.title(),
                 item.link(),
                 item.description(),

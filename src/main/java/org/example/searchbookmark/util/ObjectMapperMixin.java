@@ -1,6 +1,8 @@
 package org.example.searchbookmark.util;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 public interface ObjectMapperMixin {
-    ObjectMapperMixin objectMapper = new ObjectMapperMixin() {
+    ObjectMapper objectMapper = new ObjectMapper() {
     };
 }

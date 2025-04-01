@@ -21,8 +21,6 @@ public class NaverSearchService implements SearchService {
 
     @Override
     public List<KeywordSearch> searchByKeyword(String keyword) throws IOException, InterruptedException {
-        naverSearchAPI.callAPI(new NaverSearchParam(keyword));
-        logger.info("searchByKeyword keyword: " + keyword);
-        return List.of();
+        return naverSearchAPI.callAPI(new NaverSearchParam(keyword));
     }
 }
